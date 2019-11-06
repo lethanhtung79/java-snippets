@@ -281,8 +281,6 @@ or
         FileChannel outChannel = new FileOutputStream( out ).getChannel();
         try
         {
-//          inChannel.transferTo(0, inChannel.size(), outChannel);      // original -- apparently has trouble copying large files on Windows
- 
             // magic number for Windows, 64Mb - 32Kb)
             int maxCount = (64 * 1024 * 1024) - (32 * 1024);
             long size = inChannel.size();
